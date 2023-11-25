@@ -11,6 +11,13 @@ dependencies:
     graph_dot:
 ```
 
+you will also need the **graphviz** utility.
+
+Fedora
+```
+sudo dnf install graphviz
+```
+
 ## Usage
 
 Look in `/example` folder.
