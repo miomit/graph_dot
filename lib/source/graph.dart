@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:graph_dot/graph_dot.dart';
 
 class Graph {
