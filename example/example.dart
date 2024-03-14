@@ -2,20 +2,35 @@ import 'dart:io';
 
 import 'package:graph_dot/graph_dot.dart';
 
+class Node implements ITree{
+  String name;
+
+  List<Node> childs = [];
+
+  Node(this.name, this.childs);
+
+  @override
+  List<ITree> getChilds() {
+    return childs;
+  }
+  
+  @override
+  String getLabel() {
+    return name;
+  }
+}
+
 void main() {
-  var graph = Graph();
+  var a = Node(
+    "Y",
+    [Node("B", [Node("E", []), Node("F", [])]), Node("C", [Node("D", [])])]
+  );
 
-  graph.setNode('A', label: 'Node 1');
-  graph.setNode('B', label: 'B');
-  graph.setNode('C', label: 'C');
-
-  graph.setEdge('A', 'B');
-  graph.setEdge('B', 'C', label: 'Edge');
-  graph.setEdge('C', 'A', label: 'POP');
+  var g = Graph.parseTree(a);
 
   File newFile = File("./test.dot");
 
-  newFile.writeAsStringSync(graph.toDot());
+  newFile.writeAsStringSync(g.toDot());
 
-  Process.runSync("dot", ["-Tpng", "test.dot", "-o", "test.png"]);
+  Process.runSync("dot", ["-Tpng", "-Gdpi=300", "test.dot", "-o", "test.png"]);
 }
