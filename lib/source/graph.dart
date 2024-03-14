@@ -3,8 +3,8 @@ import 'package:graph_dot/graph_dot.dart';
 class Graph {
   String name;
 
-  Map<String, String> _nodes = {};
-  List<({String a, String b, String label})> _edges = [];
+  final Map<String, String> _nodes = {};
+  final List<({String a, String b, String label})> _edges = [];
 
   Graph({this.name = "MyGraph"});
 
