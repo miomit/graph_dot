@@ -1,6 +1,7 @@
 Library for creating Graphviz graphs in the dot language.
 
 ![example](https://github.com/yuraMovsesyan/graph_dot/blob/main/assets/example.png?raw=true)
+![example](https://github.com/yuraMovsesyan/graph_dot/blob/main/assets/parseTree.png?raw=true)
 
 ## Getting started
 
