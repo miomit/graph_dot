@@ -14,9 +14,9 @@ class Graph {
 
     graph.setNode(node.hashCode.toString(), label: node.getLabel());
 
-    for (var nodeChild in node.getChilds()) {
-      final treeChild = Graph.parseTree(nodeChild);
-      graph.setEdge(node.hashCode.toString(), nodeChild.hashCode.toString());
+    for (var (edgeLabel, child) in node.getChilds()) {
+      final treeChild = Graph.parseTree(child);
+      graph.setEdge(node.hashCode.toString(), child.hashCode.toString(), label: edgeLabel);
       graph._nodes.addAll(treeChild._nodes);
       graph._edges.addAll(treeChild._edges);
     }

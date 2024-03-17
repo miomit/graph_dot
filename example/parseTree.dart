@@ -10,8 +10,8 @@ class Node implements ITree{
   Node(this.name, this.childs);
 
   @override
-  List<ITree> getChilds() {
-    return childs;
+  List<(String, ITree)> getChilds() {
+    return childs.map((e) => ("", e)).toList();
   }
   
   @override

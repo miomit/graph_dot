@@ -1,4 +1,4 @@
 class ITree {
   String getLabel() => "";
-  List<ITree> getChilds() => [];
+  List<(String,ITree)> getChilds() => [];
 }
